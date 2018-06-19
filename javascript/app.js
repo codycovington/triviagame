@@ -102,9 +102,26 @@ var wrongAnswer = 5 - answeredCorrectly;
         }    
     };
     $("#question_div").append("<br><input type='submit' display='Submit'></input></form>");
-});
 
 //Function for a timer
+function timer(){
+
+    
+    time = 15;
+    loseTime = time--;
+	$("#start_game").hide();
+	$("#choices").html("");
+	$("#timer_div").html("<p id='timeText'> Countdown: " + time + "</p>");
+    clearInterval(intervalId);
+    intervalId = setInterval(loseTime, 1000);
+    
+        
+}
+timer();
+
+
+});
+
 
 //Function for checking answer selected vs Array answer
 
